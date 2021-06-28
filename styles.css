@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(https://cdn.wallpapersafari.com/82/86/zEMLHV.jpg);
+    background-position: center;
+
+  }
+  
+  h1{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0
+  }
+  
+  .pokemon-list-container{
+    display: table-cell;
+    vertical-align: middle;
+    position: fixed;
+    top: 200px;
+    left: 0;
+    right: 0;
+  }
+  
+  .pokemon-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    right: 0px;
+  }
+  
+  .pokemon-info img{
+      height: 250px;
+      width: 250px;
+  }
+
+  .btn{
+    padding: 20px;
+    background-color: #343434;
+    color: white;
+    border-radius: 50px;
+    font-size: 20px;
+    /* border: none; */
+    margin: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
+  .btn:hover {
+      background-color: #da1e2d;
+      color: black;
+
+  }
+
+  .pokemon-btn {
+    vertical-align: middle;
+    display: table-cell;
+  }
