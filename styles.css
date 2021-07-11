@@ -5,8 +5,11 @@
 }
 
 body{
-    background-image: url(https://cdn.wallpapersafari.com/82/86/zEMLHV.jpg);
-    background-position: center;
+    background-image: url(https://wallpapercave.com/wp/UTEF6XR.png);
+    /* background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; */
 
   }
   
@@ -34,10 +37,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 100px;
+    /* position: absolute; */
+    gap: 20px;
+    text-align: center;
+    /* top: 100px;
     left: 0px;
-    right: 0px;
+    right: 0px; */
   }
   
   .pokemon-info img{
@@ -52,10 +57,17 @@ body{
     border-radius: 50px;
     font-size: 20px;
     /* border: none; */
-    margin: 10px;
+    margin: 15px;
     text-transform: uppercase;
     text-align: center;
     flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pokemon-btn{
+    
   }
 
   .btn:hover {
@@ -67,4 +79,9 @@ body{
   .pokemon-btn {
     vertical-align: middle;
     display: table-cell;
+  }
+
+  .clicl-btn {
+    display: flex;
+    flex-direction: column;
   }

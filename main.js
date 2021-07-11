@@ -20,8 +20,8 @@ function getPokemonList(url) {
         container.innerHTML += `<button class="btn pokemon-btn" onclick="getPokemonInfo('${btn.url}')">${btn.name}</button>`;
       });
       // Add a next pokemon button
-      container.innerHTML += `<br><br><button class="btn next-btn" onclick="getPokemonList('${data.next}')">Next</button>`;
-      container.innerHTML += `<br><br><button class="btn previous-btn" onclick="getPokemonList('${data.previous}')">Previous</button>`;
+      container.innerHTML += `<br><br><button class="btn click-btn" onclick="getPokemonList('${data.next}')">Next</button>`;
+      container.innerHTML += `<br><br><button class="btn click-btn" onclick="getPokemonList('${data.previous}')">Previous</button>`;
     });
 }
 
@@ -38,6 +38,46 @@ function getPokemonInfo(url) {
       // Write data to pokemon information container
       document.querySelector(".pokemon-info").innerHTML = `
     <img src="${data.sprites.front_default} ">
-    `;
+    ${abilitiesLoop(data.abilities)} 
+     ${typesLoop(data.types)}
+     ${moveSet(data.moves)}`;
+      document.querySelector('.pokemon-info').innerHTML += `<div>Height: ${data.height}</div>`
+      document.querySelector('.pokemon-info').innerHTML += `<div># ${data.game_indices[0].game_index}</div>`
+      document.querySelector('#modal').classList.toggle('active');
     });
+}
+
+function removeModal(){
+  document.querySelector('#modal').classList.remove('active')
+}
+
+function abilitiesLoop(abilities){
+  let items = ''
+  for (let item of abilities){
+    items += `<div>Abilities: ${item.ability.name}</div>`;
+  };
+  return items;
+}
+
+function typesLoop(types){
+  let typeItems = '';
+  for (let typeItem of types){
+    typeItems += `<div>Types: ${typeItem.type.name}</div>`;
+  };
+  return typeItems;
+}
+
+function moveSet(moves){
+  let index1 = Math.floor(Math.random() * moves.length);
+  let index2 = Math.floor(Math.random() * moves.length);
+  
+  while(index1 == index2){
+    index2 = Math.floor(Math.random() * moves.length);
+  }
+  
+  let moveSet = `
+    <div>Move: ${moves[index1].move.name}</div>
+    <div>Move: ${moves[index2].move.name}</div>
+  `
+  return moveSet;
 }
